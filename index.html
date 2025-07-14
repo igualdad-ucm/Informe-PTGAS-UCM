@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Distribución de PDI por sexo UCM</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f8f8f8;
+      margin: 0;
+    }
+    header {
+      background: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #eee;
+      padding: 10px 20px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    nav button {
+      padding: 10px 20px;
+      background: #003366;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    nav button:hover {
+      background: #0055aa;
+    }
+    section {
+      display: none;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    section.active {
+      display: block;
+    }
+    img {
+      max-width: 90%;
+      max-height: 1000vh;
+      border-radius: 8px;
+      height: auto;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    a button {
+      background-color: #0077cc;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    a button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Tablas de distribución del sexo del PDI al servicio de la UCM</h1>
+</header>
+
+<nav>
+  <button onclick="showTable('tabla1')">Evolución del PTGAS al servicio de la UCM</button>
+  <button onclick="showTable('tabla2')">Evolución del PTGAS total al servicio de la UCM por edad</button>
+  <button onclick="showTable('tabla3')">Evolución del PTGAS total al servicio de la UCM por categoría</button>
+  <button onclick="showTable('tabla4')">Evolución del PTGAS total al servicio de la UCM por categoría y género</button>
+  <button onclick="showTable('tabla5')">Evolución del PTGAS total al servicio de la UCM por categoría y edad</button>
+  <button onclick="showTable('tabla6')">Evolución del PTGAS total al servicio de la UCM por centro y género</button>
+  <button onclick="showTable('tabla7')">Concentración del PTGAS total al servicio de la UCM por centro y género</button>
+  <button onclick="showTable('tabla8')">Participación de la Mujer por categoría del PTGAS y centro</button>
+</nav>
+
+<section id="tabla1">
+  <a href="csv/TotalPTGASPorGenero.csv" download>
+    <button>Descargar CSV</button>
+  </a>
+  <br><br>
+  <img src="Tablas/tabla1.png" alt="Tabla 1">
+</section>
+
+
+<section id="tabla2">
+  <a href="csv/TotalPTGASPorGeneroYEdad.csv" download>
+    <button>Descargar CSV</button>
+  </a>
+  <br><br>
+  <img src="Tablas/tabla2.png" alt="Tabla 2">
+</section>
+
+<section id="tabla3">
+  <a href="csv/TotalPTGASPorCategoria.csv" download>
+    <button>Descargar CSV Tabla 3</button>
+  </a>
+  <br><br>
+  <img src="Tablas/tabla3.png" alt="Tabla 3">
+  <br><br>
+  <a href="csv/PCTPTGASPorCategoria.csv" download>
+    <button>Descargar CSV Tabla 4</button>
+  </a> 
+  <br><br>
+  <img src="Tablas/tabla4.png" alt="Tabla 4">
+  <br><br>
+
+</section>
+
+<section id="tabla4">
+  <a href="csv/TotalPTGASPorCategoriaYGenero.csv" download>
+    <button>Descargar CSV Tabla 5</button>
+  </a>
+  <br><br>
+  <img src="Tablas/tabla5.png" alt="Tabla 5">
+  <br><br>
+  <a href="csv/PCTPTGASPorCategoriaYGenero.csv" download>
+    <button>Descargar CSV Tabla 6</button>
+  </a>
+  <br><br>
+  <img src="Tablas/tabla6.png" alt="Tabla 6">
+</section>
+
+<section id="tabla5">
+  <a href="csv/EdadMediaPTGASPorCategoriaYGenero.csv" download>
+    <button>Descargar CSV</button>
+  </a>
+  <br><br>
+  <img src="Tablas/tabla7.png" alt="Tabla 7">
+</section>
+
+<section id="tabla6">
+  <a href="csv/EdadMediaPTGASPorCentroYGenero.csv" download>
+    <button>Descargar CSV</button>
+  </a>
+  <br><br>
+  <img src="Tablas/tabla8_1.png" alt="Tabla 8">
+  <img src="Tablas/tabla8_2.png" alt="Tabla 8">
+  <img src="Tablas/tabla8_3.png" alt="Tabla 8">  
+</section>
+
+<section id="tabla7">
+    <a href="csv/ConcentraciónPTGASPorCentro.csv" download>
+      <button>Descargar CSV</button>
+    </a>
+    <br><br>
+    <img src="Tablas/tabla9.png" alt="Tabla 9">
+  </section>
+
+  <section id="tabla8">
+    <a href="csv/ParticipaciónMujerPTGASPorCentro.csv" download>
+      <button>Descargar CSV</button>
+    </a>
+    <br><br>
+    <img src="Tablas/tabla10.png" alt="Tabla 10">
+  </section>
+
+<script>
+  function showTable(id) {
+    // Ocultar todas las secciones
+    document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+    // Mostrar solo la seleccionada
+    document.getElementById(id).classList.add('active');
+    // Subir al top automáticamente
+    window.scrollTo(0, 0);
+  }
+</script>
+
+</body>
+</html>
